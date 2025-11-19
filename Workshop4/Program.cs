@@ -90,5 +90,43 @@ class Program
         Console.WriteLine("Name: " + p2.playerName);
         Console.WriteLine("Level: " + p2.level);
         Console.WriteLine("Health: " + p2.health);
+
+        //Task5
+
+        // - PART 1: DayType Enum Logic -
+        Console.Write("Enter a day: ");
+        string inputDay = Console.ReadLine().Trim().ToLower();
+
+        DayType dayType;
+
+        if (inputDay == "friday" || inputDay == "saturday")
+        {
+            dayType = DayType.Weekend;
+        }
+        else
+        {
+            dayType = DayType.Weekday;
+        }
+
+        Console.WriteLine($"It is: {dayType}");
+
+        // - PART 2: Book Record -
+        // First object
+        Book b1 = new Book("C# Basics", "John Smith", 499.99);
+
+        // Create new object using with expression
+        Book b2 = b1 with { title = "Advanced C#", price = 799.50 };
+
+        // Print first object's values
+        Console.WriteLine("\nFirst Book:");
+        Console.WriteLine($"Title: {b1.title}, Author: {b1.author}, Price: {b1.price}");
+
+        // Deconstruct second object
+        var (title, author, price) = b2;
+
+        Console.WriteLine("\nSecond Book (Deconstructed):");
+        Console.WriteLine($"Title: {title}");
+        Console.WriteLine($"Author: {author}");
+        Console.WriteLine($"Price: {price}");
     }
 }
