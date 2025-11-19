@@ -56,5 +56,23 @@ class Program
         Console.WriteLine("Addition: " + sum);
         Console.WriteLine("Multiplication (5 * 3): " + product1);
         Console.WriteLine("Multiplication with default (7 * 1): " + product2);
+
+        //Task3
+        // Create object of ParameterDemo
+        ParameterDemo demo = new ParameterDemo();
+
+        // 1. Calling Increase() using ref
+        int myNumber = 20;
+        demo.Increase(ref myNumber);
+        Console.WriteLine("After Increase: " + myNumber);
+
+        // 2. Calling GetFullName() using out
+        string fullName;
+        demo.GetFullName(out fullName);
+        Console.WriteLine("Full Name: " + fullName);
+
+        // 3. Calling SumAll() using params
+        int total = demo.SumAll(5, 10, 15, 20);
+        Console.WriteLine("Sum of all numbers: " + total);
     }
 }
