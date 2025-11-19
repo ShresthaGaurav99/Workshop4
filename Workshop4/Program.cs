@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 class Program
 {
@@ -74,5 +75,20 @@ class Program
         // 3. Calling SumAll() using params
         int total = demo.SumAll(5, 10, 15, 20);
         Console.WriteLine("Sum of all numbers: " + total);
+
+        //Task4
+        // 1. Object using default constructor
+        Player p1 = new Player();
+        Console.WriteLine("\nPlayer 1 Details:");
+        Console.WriteLine("Name: " + p1.playerName);
+        Console.WriteLine("Level: " + p1.level);
+        Console.WriteLine("Health: " + p1.health);
+
+        // 2. Object using parameterized constructor
+        Player p2 = new Player("Gaurav", 5, 100);
+        Console.WriteLine("\nPlayer 2 Details:");
+        Console.WriteLine("Name: " + p2.playerName);
+        Console.WriteLine("Level: " + p2.level);
+        Console.WriteLine("Health: " + p2.health);
     }
 }
