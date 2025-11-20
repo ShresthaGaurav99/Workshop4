@@ -128,5 +128,42 @@ class Program
         Console.WriteLine($"Title: {title}");
         Console.WriteLine($"Author: {author}");
         Console.WriteLine($"Price: {price}");
+
+        //Task6
+        Console.Write("Enter marks: ");
+        bool isMarksValid = int.TryParse(Console.ReadLine(), out int marks);
+
+        Console.Write("Enter total: ");
+        bool isTotalValid = int.TryParse(Console.ReadLine(), out int total);
+
+        if (!isMarksValid || !isTotalValid)
+        {
+            Console.WriteLine("Invalid input! Please enter valid integers.");
+            return;
+        }
+
+        // 🔴 BREAKPOINT 1: Set breakpoint here (before calculation)
+
+        double percentage = (double)marks / total * 100;
+
+        // 🔵 BREAKPOINT 2: Set breakpoint here (after calculation)
+
+        Console.WriteLine("Percentage = " + percentage + "%");
+
+        //  Breakpoint 1
+        //You'll see that: 
+        //marks is an integer
+
+        //total is an integer
+
+        //Breakpoint 2
+        //You will notice the percentage value is incorrect when calculated with double percentage = marks / total * 100;
+
+        //The output is incorrect because both marks and total are integers, so the division marks / total performs integer division,
+        //which truncates any decimal part. This means that if marks is less than total, the result of the division will be 0, leading to an incorrect percentage calculation.
+        
+        //We can fix this by casting either marks or total to double before the division to ensure that floating-point division is performed.
+
+
     }
 }
